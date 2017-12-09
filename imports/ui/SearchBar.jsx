@@ -8,11 +8,12 @@ export default class SearchBar extends Component {
         super(props);
         this.state = {value: ''};
         this.onSearchChange = this.onSearchChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
     }
 
     render(){
         return (
-            <form>
+            <form onSubmit={this.onSubmit}>
                 <input
                     type="text"
                     placeholder="Search"
@@ -20,12 +21,16 @@ export default class SearchBar extends Component {
                     onChange={this.onSearchChange}
                     value={this.state.value}
                 />
+                <input type="submit" value="Search" />
             </form>
         );
     }
 
     onSearchChange(event){
         this.setState({value:event.target.value})
+    }
+    onSubmit(event){
         this.props.onSearchChange(this.state.value);
+        event.preventDefault();
     }
 }

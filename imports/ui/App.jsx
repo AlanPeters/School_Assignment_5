@@ -6,7 +6,6 @@ import ReactDataGrid from 'react-data-grid';
 
 
 
-
 // App component - represents the whole app
 export default class App extends Component {
     constructor(props) {
@@ -16,7 +15,9 @@ export default class App extends Component {
 
         this.columns = [
             {key: 'id', name: 'ID' },
-            {key: 'login', name: 'User Name'}
+            {key: 'login', name: 'User Name'},
+            {key: 'avatar_url', name: 'Avatar', formatter: ImageFormatter},
+            {key: 'html_url', name: 'Web Link', formatter: LinkFormatter},
         ];
 
 
@@ -31,7 +32,6 @@ export default class App extends Component {
 
     componentDidMount(){
 
-        this.search('AlanPeters');
     }
 
     search(query){
@@ -62,7 +62,7 @@ export default class App extends Component {
         return (
             <div>
                 <span> 
-                    <h1>Test</h1>
+                    <h1>Github User Search</h1>
 
                     <SearchBar onSearchChange={this.onSearchChange} />
                 </span>
@@ -79,3 +79,14 @@ export default class App extends Component {
     }
 }
 
+class ImageFormatter extends Component {
+    render(){
+        return (<img src={this.props.value} height="20px" width="20px" />);
+    }
+}
+
+class LinkFormatter extends Component {
+    render(){
+        return (<a href={this.props.value} >{this.props.value}</a>);
+    }
+}

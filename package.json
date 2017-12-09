@@ -12,6 +12,7 @@
     "proptypes": "^1.1.0",
     "react": "^16.1.0",
     "react-data-grid": "^2.0.78",
+    "react-data-grid-addons": "^2.0.78",
     "react-dom": "^16.1.0",
     "react-require-props": "0.0.1"
   }
