@@ -47,7 +47,7 @@ The API for the react-data-grids is very simple. All that I had to do was create
 
 Because I was already saving the API result to State, the data grid updated autoamitcally when the results were available. I started by only displaying the users id and login. 
 
-![Basic Display](/README_IMAGES/picture_1.png?raw=true)
+![Basic Display](/README_IMAGES/Picture_1.png?raw=true)
 
 ### Iteration 4: Add Search
 
